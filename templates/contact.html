@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}
+Contact Us - City Hospital
+{% endblock %}
+
+{% block content %}
+<div class="container p-5">
+    <h1 class="text-center mt-4">Contact Us</h1>
+    <hr>
+
+    <div class="row">
+        <!-- Contact Information -->
+        <div class="col-md-6">
+            <h2>Get in Touch</h2>
+            <hr>
+            <p>If you have any questions, feel free to reach out to us. We are here to assist you 24/7.</p>
+            <ul class="list-unstyled">
+                <li><strong>📍 Address:</strong> City Hospital, Main Street, Your City</li>
+                <li><strong>📞 Phone:</strong> +91 9946862417</li>
+                <li><strong>✉ Email:</strong> contact@cityhospital.com</li>
+                <li><strong>🕒 Working Hours:</strong> 24/7 Emergency Service</li>
+            </ul>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <h2>Send Us a Message</h2>
+            <hr>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Google Map (Replace with your location) -->
+    <div class="mt-5">
+        <h2 class="text-center">Find Us on Map</h2>
+        <hr>
+        <div class="d-flex justify-content-center">
+            <iframe 
+                src="https://maps.google.com/maps?q=City%20Hospital,%20Your%20City&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}
